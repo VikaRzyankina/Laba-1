@@ -15,7 +15,7 @@ with open('text.txt') as f: #открытие и чтение файла
     for i in file.split():
         lines.append(i)
 
-for line in lines: #поиск чисел в файле
+for line in lines: #поиск чисел в файле и занесение их в отдельный массив(чтобы избежать разделения чисел)
     h = 0
     for i in range(len(line)):
         if h > 0:
@@ -40,10 +40,10 @@ if len(numbers) == 0:
     print('В файле нет цифр')
     quit()
 
-uwu = [] # подх. по условию
+uwu = [] # подходящие по условию
 for i in numbers:
-    kn = 0
-    pn = 0
+    kn = 0 #Кол-во нулей
+    pn = 0 #кол-во групп нулей
     for j in range(len(i)):
         try:
             if i[j] == '0':
@@ -58,7 +58,7 @@ for i in numbers:
     if pn in [1, 2]:
         uwu.append(i)
 
-if len(uwu) == 0:
+if len(uwu) == 0: #если файл без чисел
     print('В файле нет подходящих под условие цифр')
     quit()
 
