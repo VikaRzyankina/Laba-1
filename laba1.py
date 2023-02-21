@@ -29,7 +29,7 @@ with open('text.txt','r') as f: #открываем файл
                         kn = 0
                 except IndexError:
                     break
-            if pn in [0, 2]:
+            if pn < 3:
                 uwu.append(work_buffer)
         work_buffer=''
         buffer=f.read(buffer_len) #читаем очередной блок
